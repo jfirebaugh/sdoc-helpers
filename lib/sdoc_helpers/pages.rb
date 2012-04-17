@@ -1,10 +1,10 @@
-require 'rake/rdoctask'
+require 'rdoc/task'
 
 readme = Dir['*'].grep(/README/)[0]
 files = [ readme, 'LICENSE', 'lib' ]
 files.push('CONTRIBUTORS') if Dir['*'].include?('CONTRIBUTORS')
 
-Rake::RDocTask.new do |rdoc|
+RDoc::Task.new do |rdoc|
   rdoc.main = readme
   rdoc.rdoc_files = files
   rdoc.rdoc_dir = 'docs'
